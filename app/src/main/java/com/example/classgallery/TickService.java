@@ -21,8 +21,15 @@ public class TickService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Toast.makeText(getApplicationContext(), "YES", Toast.LENGTH_SHORT);
-        return START_STICKY;
+        while(true)
+        {
+            time+=1;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
